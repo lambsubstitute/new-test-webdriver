@@ -27,7 +27,7 @@ Feature: as a registered user, I can create new pages
     Add a page title before hitting publish.
      """
 
-  Scenario: adding a page with no name
+  Scenario: adding a page with the same name as one already existing in the same space
     When I create a new page with the same name as one that exists
     Then I should receive the validation error
      """
