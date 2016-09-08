@@ -1,6 +1,7 @@
 BASE_URL = 'https://moqa-wiki.atlassian.net'
-DEFAULT_USERNAME = 'keith@mo-qa.co.uk'
-DEFAULT_PASSWORD = 'b1lly1sg0d'
+DEFAULT_ADMIN_USERNAME = 'keith@mo-qa.co.uk'
+DEFAULT_PASSWORD = 'password1'
+DEFAULT_NON_ADMIN_USERNAME = 'keith@4kn.co.uk'
 
 
 

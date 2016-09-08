@@ -18,7 +18,7 @@ Feature: I can add restrictions to pages
   Scenario: check restrictions are set for restricted editing by restricted user
     And I open the restriction options
     And set the restrictions to "Editing restricted"
-    When I login with the username "keith@4kn.co.uk" and password "password1"
+    When I login as a non admin user
     And navigate to the restricted page
     Then I should not be able to edit it
 

@@ -1,7 +1,7 @@
 # given steps
 Given(/^I am logged in to confluence$/) do
   # enters username and password and clicks login
-  login(DEFAULT_USERNAME, DEFAULT_PASSWORD)
+  login(DEFAULT_ADMIN_USERNAME, DEFAULT_PASSWORD)
 end
 
 

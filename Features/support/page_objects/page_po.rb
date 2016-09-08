@@ -10,6 +10,8 @@ class PagePo
   # Element identifiers
   EDIT_LINK_ID = 'editPageLink'
   RESTRICTIONS_LINK_ID = 'content-metadata-page-restrictions'
+  INNERTIPSY_DIV_CLASS = 'tipsy-inner'
+  RESTRICTED_DIV_ID = 'page-restricted-container'
 
   def get_page
     @browser.div(:id, PAGE_DIV_ID).wait_until_present
@@ -17,25 +19,41 @@ class PagePo
   end
 
   def get_page_name
-    new_page_form = get_page
-    new_page_form.h1(:id, HEADER_DIV_ID).wait_until_present
-    new_page_form.h1(:id, HEADER_DIV_ID).text
+    page = get_page
+    page.h1(:id, HEADER_DIV_ID).wait_until_present
+    page.h1(:id, HEADER_DIV_ID).text
   end
 
   def click_edit
-    new_page_form = get_page
-    new_page_form.link(:id, EDIT_LINK_ID).wait_until_present
-    new_page_form.link(:id, EDIT_LINK_ID).click
+    page = get_page
+    page.link(:id, EDIT_LINK_ID).wait_until_present
+    page.link(:id, EDIT_LINK_ID).click
   end
 
   def edit_button_present?
-    new_page_form = get_page
-    return new_page_form.link(:id, EDIT_LINK_ID).present?
+    page = get_page
+    return page.link(:id, EDIT_LINK_ID).present?
   end
 
   def click_restrictions
-    new_page_form = get_page
-    new_page_form.link(:id, RESTRICTIONS_LINK_ID).wait_until_present
-    new_page_form.link(:id, RESTRICTIONS_LINK_ID).click
+    page = get_page
+    page.link(:id, RESTRICTIONS_LINK_ID).wait_until_present
+    page.link(:id, RESTRICTIONS_LINK_ID).click
+  end
+  
+  def is_page_restricted?
+    page = get_page
+    return page.div(:id, RESTRICTED_DIV_ID).present?
+  end
+
+  def get_restricted_page_text
+    page = get_page
+    return page.div(:id, RESTRICTED_DIV_ID).text
+  end
+
+  def get_restrictions_applied_label_text
+    # look up was being difficult so waiting till seen in browser before narrowing focus
+    @browser.div(:class, INNERTIPSY_DIV_CLASS).wait_until_present
+    return @browser.div(:class, INNERTIPSY_DIV_CLASS).text
   end
 end
