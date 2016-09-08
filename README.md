@@ -11,8 +11,8 @@ Once confirmed you can run all the tests by typing ```cucumber```, which will st
 
 
 Test suite code hierarchy
-
----->>> Cucucmber feature file: holds the scenarios
+```
+---->>> Cucucmber feature file: holds the scenarios and steps, these call the step definitions
   |
   |
 ---->>> Step definitions: we conduct assertions and expectations at this level by calling the helpers
@@ -22,3 +22,4 @@ Test suite code hierarchy
   |
   |
 ---->> Page objects: UI Interactions level, here we have the pure interactions that keep element identifiers for specific pages or page areas, which cuts down code reuse and improves maintainability
+```
