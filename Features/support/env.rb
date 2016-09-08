@@ -3,7 +3,10 @@ require 'watir-webdriver'
 
 
 Before do
-  @browser = Watir::Browser.new :chrome
+  #@browser = Watir::Browser.new :chrome
+  profile = Selenium::WebDriver::Firefox::Profile.new
+  browser = Watir::Browser.new :firefox, :profile => profile
+  @browser = browser
   @browser.goto(BASE_URL)
 end
 

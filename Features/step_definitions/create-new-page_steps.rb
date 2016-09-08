@@ -79,3 +79,31 @@ Then(/^I should receive the validation error$/) do |text|
   expect(get_error_message).to eq(text)
 end
 
+
+Given(/^I create "([^"]*)" new pages$/) do |arg|
+  count = 0
+  i = arg.to_i
+  generate_random_page_title
+  while count < i
+    create_page(@generate_page_name + '_' + count.to_s)
+    expect(get_page_title).to eq(@generate_page_name + '_' + count.to_s)
+    @browser.goto(BASE_URL)
+    click_quick_create
+    count = count + 1
+  end
+end
+
+Given(/^I create "([^"]*)" child pages of a new page$/) do |arg|
+  p count = 0
+  i = arg.to_i
+  create_page(generate_random_page_title)
+  expect(get_page_title).to eq(@generate_page_name)
+  parent_page_url = @browser.url
+  while count < i
+    @browser.goto(parent_page_url)
+    click_quick_create
+    create_page('child_' + count.to_s + '_' + @generate_page_name)
+    expect(get_page_title).to eq('child_' + count.to_s + '_' + @generate_page_name)
+    count = count + 1
+  end
+end

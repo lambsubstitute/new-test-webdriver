@@ -10,7 +10,7 @@ class CreateNewPagePo
   # Element identifiers
   SAVE_BUTTON_ID = 'rte-button-publish'
   PREVIEW_BUTTON_ID = 'rte-button-preview'
-  CLOSE_BUTTON_ID = ''
+  CLOSE_BUTTON_ID = 'rte-button-cancel'
 
   def get_new_page_form
     @browser.form(:id, CREATE_PAGE_FORM_ID).wait_until_present
@@ -36,6 +36,7 @@ class CreateNewPagePo
     new_page_form = get_new_page_form
     new_page_form.button(:id, PREVIEW_BUTTON_ID).click
   end
+
 
 end
 

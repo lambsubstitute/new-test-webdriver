@@ -6,4 +6,5 @@ DEFAULT_PASSWORD = 'b1lly1sg0d'
 
 # GLOBAL IDENTIFIERS
 PREVIEW_IFRAME_ID = 'editor-preview-iframe'
+RESTRICTIONS_IFRAME_ID = 'wysiwygTextarea_ifr'
 

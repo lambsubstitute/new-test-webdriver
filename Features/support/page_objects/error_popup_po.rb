@@ -17,6 +17,4 @@ class ErrorPopupPo
     error_popup = get_error_popup_container
     return error_popup.text
   end
-
-
 end
