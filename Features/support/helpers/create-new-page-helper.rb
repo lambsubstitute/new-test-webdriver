@@ -8,6 +8,9 @@ def save_new_page
   # click save new page button
   create_page = CreateNewPagePo.new(@browser)
   create_page.click_save
+  sleep 1
+  # save the url for later date when needing to navigate back to this new page
+  @new_page_url = @browser.url
 end
 
 def create_page(page_name)
@@ -44,6 +47,9 @@ end
 
 def login(username, password)
   # enter login details and click login
+  # first make sure the cookies have been cleared to clear any current login session
+  @browser.cookies.clear
+  @browser.goto(BASE_URL)
   login = LoginPo.new(@browser)
   login.enter_username(username)
   login.enter_password(password)

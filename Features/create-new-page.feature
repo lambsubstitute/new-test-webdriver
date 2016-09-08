@@ -34,9 +34,10 @@ Feature: as a registered user, I can create new pages
      A page with the title 'page_title_placeholder' already exists in this space. Enter a different title for your page.
      """
 
-    Scenario: create X number of new pages
-      Given I create "200" new pages
+  # tooling: feature scenarios for exploratory testing, see exercise 2
+  #  Scenario: create X number of new pages
+  #    Given I create "200" new pages
 
-    Scenario: create X child pages of a new page
-      Given I create "200" child pages of a new page
+  #  Scenario: create X child pages of a new page
+  #    Given I create "200" child pages of a new page
 

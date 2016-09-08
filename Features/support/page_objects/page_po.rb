@@ -28,6 +28,11 @@ class PagePo
     new_page_form.link(:id, EDIT_LINK_ID).click
   end
 
+  def edit_button_present?
+    new_page_form = get_page
+    return new_page_form.link(:id, EDIT_LINK_ID).present?
+  end
+
   def click_restrictions
     new_page_form = get_page
     new_page_form.link(:id, RESTRICTIONS_LINK_ID).wait_until_present

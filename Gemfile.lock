@@ -17,6 +17,7 @@ GEM
     cucumber-wire (0.0.1)
     diff-lcs (1.2.5)
     ffi (1.9.14)
+    ffi (1.9.14-x64-mingw32)
     gherkin (4.0.0)
     multi_json (1.12.1)
     multi_test (0.1.2)
@@ -35,6 +36,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   cucumber
